@@ -12,3 +12,6 @@ if cv2.waitKey(10) == ord('q'):
 ## Mediapipe & numpy
 
 Used to detecet the necessary joints and calculate the angles
+
+![image](https://user-images.githubusercontent.com/87011531/155020288-654970d3-5e5b-4099-8000-dd73d04e81dc.png)
+
