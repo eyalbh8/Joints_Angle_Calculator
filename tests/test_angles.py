@@ -1,3 +1,4 @@
+import pytest
 from main_window import calculate_angle
 
 joints = {
