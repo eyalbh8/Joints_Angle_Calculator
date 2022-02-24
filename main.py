@@ -45,8 +45,6 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
                           landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].y]
 
             elbow_angle = calculate_angle(left_shoulder, left_elbow, left_wrist)
-            print(f"shoulder: {left_shoulder} \n elbow: {left_elbow} \n wrist: {left_wrist}")
-            print(elbow_angle)
 
             cv2.putText(image, str(elbow_angle),
                         tuple(np.multiply(left_elbow, [640, 480]).astype(int)),
