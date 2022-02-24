@@ -1,4 +1,4 @@
-from main import calculate_angle
+from main_window import calculate_angle
 
 joints = {
     "shoulder": [0.31897982954978943, 0.2254987210035324],
