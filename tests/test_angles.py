@@ -1,5 +1,20 @@
 import pytest
-from main_window import calculate_angle
+import numpy as np
+
+
+def calculate_angle(first, mid, end):
+    first = np.array(first)
+    mid = np.array(mid)
+    end = np.array(end)
+
+    radians = np.arctan2(end[1] - mid[1], end[0] - mid[0]) - np.arctan2(first[1] - mid[1], first[0] - mid[0])
+    angle = np.abs(radians * 180 / np.pi)
+
+    if angle > 180.0:
+        angle = 360 - angle
+
+    return angle
+
 
 joints = {
     "shoulder": [0.31897982954978943, 0.2254987210035324],
