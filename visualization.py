@@ -21,7 +21,6 @@ def calculate_angle(first, mid, end):
 
 
 def visualizer(angle):
-
     cap = cv2.VideoCapture(0)
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
@@ -48,121 +47,121 @@ def visualizer(angle):
                                     landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].y]
                                    ],
 
-                "left_wrist": [[landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].x,
-                                landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].y],
+                    "left_wrist": [[landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].y],
 
-                              [landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].x,
-                               landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].y],
+                                   [landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_WRIST.value].y],
 
-                              [landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].x,
-                               landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
-                                ],
-                
-                "left_shoulder": [[landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y],
-
-                                  [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].y],
-
-                                  [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y]
-                                ],
-
-                "left_hip": [[landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x,
-                              landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y],
-
-                             [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
-                              landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y],
-
-                             [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
-                              landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
-                                ],
-                
-                "left_knee": [[landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
-                                landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y],
-
-                                [landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x,
-                                 landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y],
-
-                                [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y]
-                                ],
-
-                "left_ankle": [[landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].y],
-
-                                  [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y],
-
-                                  [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
-                                   landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
-                                ],
-
-                "right_elbow": [[landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
-                                    landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].y],
-
-                                   [landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
-                                    landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y],
-
-                                   [landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].x,
-                                    landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].y]
+                                   [landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
                                    ],
 
-                "right_wrist": [[landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].x,
-                                landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].y],
+                    "left_shoulder": [[landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].x,
+                                       landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y],
 
-                              [landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].x,
-                               landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].y],
+                                      [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
+                                       landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].y],
 
-                              [landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
-                               landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y]
-                                ],
-                
-                "right_shoulder": [[landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y],
+                                      [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
+                                       landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y]
+                                      ],
 
-                                  [landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].y],
+                    "left_hip": [[landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x,
+                                  landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y],
+
+                                 [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
+                                  landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y],
+
+                                 [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
+                                  landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
+                                 ],
+
+                    "left_knee": [[landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,
+                                   landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y],
+
+                                  [landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x,
+                                   landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y],
+
+                                  [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x,
+                                   landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y]
+                                  ],
+
+                    "left_ankle": [[landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_INDEX.value].y],
+
+                                   [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y],
+
+                                   [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,
+                                    landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value].y]
+                                   ],
+
+                    "right_elbow": [[landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].y]
+                                    ],
+
+                    "right_wrist": [[landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_WRIST.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y]
+                                    ],
+
+                    "right_shoulder": [[landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].x,
+                                        landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y],
+
+                                       [landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
+                                        landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].y],
+
+                                       [landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].x,
+                                        landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y]
+                                       ],
+
+                    "right_hip": [[landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].x,
+                                   landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].y],
 
                                   [landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y]
-                                ],
-
-                "right_hip": [[landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].x,
-                              landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].y],
-
-                             [landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].x,
-                              landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y],
-
-                             [landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
-                              landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y]
-                                ],
-                
-                "right_knee": [[landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].x,
-                                landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y],
-
-                                [landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].x,
-                                 landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].y],
-
-                                [landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].y]
-                                ],
-
-                "right_ankle": [[landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].y],
-
-                                  [landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].x,
-                                   landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].y],
+                                   landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y],
 
                                   [landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
                                    landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y]
-                                ]                
-                                }
+                                  ],
+
+                    "right_knee": [[landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].x,
+                                    landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value].y],
+
+                                   [landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].x,
+                                    landmarks[mp_pose.PoseLandmark.RIGHT_KNEE.value].y],
+
+                                   [landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].x,
+                                    landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].y]
+                                   ],
+
+                    "right_ankle": [[landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_INDEX.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value].y],
+
+                                    [landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x,
+                                     landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value].y]
+                                    ]
+                }
 
                 mesured_angle = calculate_angle(joint_angles[angle][0],
-                                                joint_angles[angle][1], 
+                                                joint_angles[angle][1],
                                                 joint_angles[angle][2])
- 
+
                 cv2.putText(image, str(mesured_angle),
                             tuple(np.multiply(joint_angles[angle][1], [640, 480]).astype(int)),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
