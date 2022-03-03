@@ -1,5 +1,5 @@
 import tkinter as tk
-from visualization import visualizer
+from client_visualization import visualizer
 
 joints_list = ["left_wrist", "left_elbow", "left_shoulder", "left_hip",
                "left_knee", "left_ankle", "right_wrist", "right_elbow",

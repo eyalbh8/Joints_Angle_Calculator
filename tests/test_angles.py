@@ -1,5 +1,5 @@
 import pytest
-from visualization import calculate_angle
+from client_visualization import calculate_angle
 
 
 joints = {
