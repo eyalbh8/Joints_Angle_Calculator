@@ -1,5 +1,4 @@
 import pytest
-import numpy as np
 from visualization import calculate_angle
 
 
