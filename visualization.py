@@ -20,7 +20,7 @@ def calculate_angle(first, mid, end):
     return angle
 
 
-def visualizer(angle):
+def visualizer(first_angle=0, second_angle=0, third_angle=0, fourth_angle=0, fifth_angle=0):
     cap = cv2.VideoCapture(0)
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
@@ -158,13 +158,65 @@ def visualizer(angle):
                                     ]
                 }
 
-                mesured_angle = calculate_angle(joint_angles[angle][0],
-                                                joint_angles[angle][1],
-                                                joint_angles[angle][2])
+                try:
+                    first_measured_angle = calculate_angle(joint_angles[first_angle][0],
+                                                           joint_angles[first_angle][1],
+                                                           joint_angles[first_angle][2])
 
-                cv2.putText(image, str(mesured_angle),
-                            tuple(np.multiply(joint_angles[angle][1], [640, 480]).astype(int)),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    cv2.putText(image, str(first_measured_angle),
+                                tuple(np.multiply(joint_angles[first_angle][1], [640, 480]).astype(int)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
+                except:
+                    pass
+
+                try:
+                    second_measured_angle = calculate_angle(joint_angles[second_angle][0],
+                                                            joint_angles[second_angle][1],
+                                                            joint_angles[second_angle][2])
+
+                    cv2.putText(image, str(second_measured_angle),
+                                tuple(np.multiply(joint_angles[second_angle][1], [640, 480]).astype(int)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
+                except:
+                    pass
+
+                try:
+                    third_measured_angle = calculate_angle(joint_angles[third_angle][0],
+                                                           joint_angles[third_angle][1],
+                                                           joint_angles[third_angle][2])
+
+                    cv2.putText(image, str(third_measured_angle),
+                                tuple(np.multiply(joint_angles[third_angle][1], [640, 480]).astype(int)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
+                except:
+                    pass
+
+                try:
+                    fourth_measured_angle = calculate_angle(joint_angles[fourth_angle][0],
+                                                            joint_angles[fourth_angle][1],
+                                                            joint_angles[fourth_angle][2])
+
+                    cv2.putText(image, str(fourth_measured_angle),
+                                tuple(np.multiply(joint_angles[fourth_angle][1], [640, 480]).astype(int)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
+                except:
+                    pass
+
+                try:
+                    fifth_measured_angle = calculate_angle(joint_angles[fifth_angle][0],
+                                                           joint_angles[fifth_angle][1],
+                                                           joint_angles[fifth_angle][2])
+
+                    cv2.putText(image, str(fifth_measured_angle),
+                                tuple(np.multiply(joint_angles[fifth_angle][1], [640, 480]).astype(int)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
+                except:
+                    pass
 
             except:
                 pass
