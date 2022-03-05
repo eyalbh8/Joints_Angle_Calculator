@@ -1,7 +1,6 @@
 import pytest
 from client_visualization import calculate_angle
 
-
 joints = {
     "shoulder": [0.31897982954978943, 0.2254987210035324],
     "elbow": [0.7195838689804077, 0.642013669013977],
