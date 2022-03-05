@@ -14,5 +14,3 @@ def test_angle_calculating():
     angle = calculate_angle(joints["shoulder"], joints["elbow"], joints["wrist"])
 
     assert angle == joints["elbow_angle"]
-
-print(calculate_angle(joints["shoulder"], joints["elbow"], joints["wrist"]))
