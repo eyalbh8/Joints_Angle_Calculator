@@ -1,8 +1,4 @@
 import pytest
-import sys
-
-sys.path.append(r"C:\Users\user\Desktop\Elbow angle")
-
 from client_visualization import calculate_angle
 
 
@@ -18,3 +14,5 @@ def test_angle_calculating():
     angle = calculate_angle(joints["shoulder"], joints["elbow"], joints["wrist"])
 
     assert angle == joints["elbow_angle"]
+
+print(calculate_angle(joints["shoulder"], joints["elbow"], joints["wrist"]))
