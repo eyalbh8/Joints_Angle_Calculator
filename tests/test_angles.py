@@ -1,4 +1,7 @@
 import pytest
+import sys
+
+sys.path.append(r"C:\Users\user\Desktop\Elbow angle")
 from client_visualization import calculate_angle
 
 
