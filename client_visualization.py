@@ -8,6 +8,7 @@ Created Date: 11/2021
 import cv2
 import mediapipe as mp
 import numpy as np
+from check_exercises_sets import *
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
@@ -27,7 +28,24 @@ def calculate_angle(first, mid, end):
     return angle
 
 
-def visualizer(first_angle=0, second_angle=0, third_angle=0, fourth_angle=0, fifth_angle=0):
+def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_joint=False,
+               fifth_joints=False, first_angle=0, second_angle=0, third_angle=0,
+               fourth_angle=0, fifth_angle=0, number_of_times=0):
+    first_joint_first_position = 0
+    second_joint_first_position = 0
+    third_joint_first_position = 0
+    fourth_joint_first_position = 0
+    fifth_joint_first_position = 0
+
+    first_measured_angle = 0
+    second_measured_angle = 0
+    third_measured_angle = 0
+    fourth_measured_angle = 0
+    fifth_measured_angle = 0
+
+    exercise_verification = True
+
+    sets = 0
     cap = cv2.VideoCapture(0)
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
@@ -166,60 +184,85 @@ def visualizer(first_angle=0, second_angle=0, third_angle=0, fourth_angle=0, fif
                 }
 
                 try:
-                    first_measured_angle = calculate_angle(joint_angles[first_angle][0],
-                                                           joint_angles[first_angle][1],
-                                                           joint_angles[first_angle][2])
+                    first_measured_angle = calculate_angle(joint_angles[first_joint][0],
+                                                           joint_angles[first_joint][1],
+                                                           joint_angles[first_joint][2])
+
+                    if first_joint_first_position == 0:
+                        first_joint_first_position = first_measured_angle
+                    else:
+                        pass
 
                     cv2.putText(image, str(first_measured_angle),
-                                tuple(np.multiply(joint_angles[first_angle][1], [640, 480]).astype(int)),
+                                tuple(np.multiply(joint_angles[first_joint][1], [640, 480]).astype(int)),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
 
                 try:
-                    second_measured_angle = calculate_angle(joint_angles[second_angle][0],
-                                                            joint_angles[second_angle][1],
-                                                            joint_angles[second_angle][2])
+                    second_measured_angle = calculate_angle(joint_angles[second_joint][0],
+                                                            joint_angles[second_joint][1],
+                                                            joint_angles[second_joint][2])
+
+                    if second_joint_first_position == 0:
+                        second_joint_first_position = second_measured_angle
+                    else:
+                        pass
 
                     cv2.putText(image, str(second_measured_angle),
-                                tuple(np.multiply(joint_angles[second_angle][1], [640, 480]).astype(int)),
+                                tuple(np.multiply(joint_angles[second_joint][1], [640, 480]).astype(int)),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
 
                 try:
-                    third_measured_angle = calculate_angle(joint_angles[third_angle][0],
-                                                           joint_angles[third_angle][1],
-                                                           joint_angles[third_angle][2])
+                    third_measured_angle = calculate_angle(joint_angles[third_joint][0],
+                                                           joint_angles[third_joint][1],
+                                                           joint_angles[third_joint][2])
+
+                    if third_joint_first_position == 0:
+                        third_joint_first_position = third_measured_angle
+                    else:
+                        pass
 
                     cv2.putText(image, str(third_measured_angle),
-                                tuple(np.multiply(joint_angles[third_angle][1], [640, 480]).astype(int)),
+                                tuple(np.multiply(joint_angles[third_joint][1], [640, 480]).astype(int)),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
 
                 try:
-                    fourth_measured_angle = calculate_angle(joint_angles[fourth_angle][0],
-                                                            joint_angles[fourth_angle][1],
-                                                            joint_angles[fourth_angle][2])
+                    fourth_measured_angle = calculate_angle(joint_angles[fourth_joint][0],
+                                                            joint_angles[fourth_joint][1],
+                                                            joint_angles[fourth_joint][2])
+
+                    if fourth_joint_first_position == 0:
+                        fourth_joint_first_position = fourth_measured_angle
+                    else:
+                        pass
 
                     cv2.putText(image, str(fourth_measured_angle),
-                                tuple(np.multiply(joint_angles[fourth_angle][1], [640, 480]).astype(int)),
+                                tuple(np.multiply(joint_angles[fourth_joint][1], [640, 480]).astype(int)),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
 
                 try:
-                    fifth_measured_angle = calculate_angle(joint_angles[fifth_angle][0],
-                                                           joint_angles[fifth_angle][1],
-                                                           joint_angles[fifth_angle][2])
+                    fifth_measured_angle = calculate_angle(joint_angles[fifth_joints][0],
+                                                           joint_angles[fifth_joints][1],
+                                                           joint_angles[fifth_joints][2])
+
+                    if fifth_joint_first_position == 0:
+                        fifth_joint_first_position = fifth_measured_angle
+                    else:
+                        pass
 
                     cv2.putText(image, str(fifth_measured_angle),
-                                tuple(np.multiply(joint_angles[fifth_angle][1], [640, 480]).astype(int)),
+                                tuple(np.multiply(joint_angles[fifth_joints][1], [640, 480]).astype(int)),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
@@ -227,6 +270,48 @@ def visualizer(first_angle=0, second_angle=0, third_angle=0, fourth_angle=0, fif
 
             except:
                 pass
+
+            desired_angles = [first_angle, second_angle, third_angle, fourth_angle, fifth_angle]
+
+            try:
+                first_position_angles = [first_joint_first_position, second_joint_first_position,
+                                         third_joint_first_position, fourth_joint_first_position,
+                                         fifth_joint_first_position]
+
+                measured_angles = [first_measured_angle, second_measured_angle, third_measured_angle,
+                                   fourth_measured_angle, fifth_measured_angle]
+
+                measured_joints = []
+
+                count_number_verified_angles = 0
+
+                for index, angle in enumerate(desired_angles):
+                    if angle:
+                        measured_joints.append(index)
+
+                if exercise_verification:
+                    for i in measured_joints:
+                        if exercise_angles_checking(measured_angles[i], desired_angles[i]):
+                            count_number_verified_angles += 1
+
+                    if count_number_verified_angles == len(measured_joints):
+                        exercise_verification = False
+
+                else:
+                    for i in measured_joints:
+                        if exercise_angles_checking(measured_angles[i], first_position_angles[i]):
+                            count_number_verified_angles += 1
+
+                    if count_number_verified_angles == len(measured_joints):
+                        exercise_verification = True
+                        sets += 1
+
+                    if sets == number_of_times:
+                        cap.release()
+                        cv2.destroyAllWindows()
+
+            except:
+                print("didnt calculate angles")
 
             mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
 
