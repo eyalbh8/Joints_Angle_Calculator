@@ -29,22 +29,23 @@ def start():
             exercise_joints_list.append("")
             exercise_angles_list.append(False)
 
+        window.destroy()
         visualizer(exercise_joints_list[0], exercise_joints_list[1],
                    exercise_joints_list[2], exercise_joints_list[3],
                    exercise_joints_list[4], exercise_angles_list[0],
                    exercise_angles_list[1], exercise_angles_list[2],
                    exercise_angles_list[3], exercise_angles_list[4],
                    exercise_sets.get())
-        window.destroy()
+
 
     else:
+        window.destroy()
         visualizer(first_value_inside.get(), second_value_inside.get(),
                    third_value_inside.get(), fourth_value_inside.get(),
                    fifth_value_inside.get(), first_value_angle.get(),
                    second_value_angle.get(), third_value_angle.get(),
                    fourth_value_angle.get(), fifth_value_angle.get(),
                    sets.get())
-        window.destroy()
 
 
 def add_new_exercise():

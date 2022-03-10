@@ -309,6 +309,7 @@ def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_
                     if sets == number_of_times:
                         cap.release()
                         cv2.destroyAllWindows()
+                        import gif_animation
 
             except:
                 print("didnt calculate angles")

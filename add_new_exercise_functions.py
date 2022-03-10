@@ -94,21 +94,29 @@ def exercises():
                             fourth_value_inside.get(), joint4_angle.get(),
                             fifth_value_inside.get(), joint5_angle.get())
 
-        new_data = {
-            exercise.joint1_name: exercise.joint1_angle,
-            exercise.joint2_name: exercise.joint2_angle,
-            exercise.joint3_name: exercise.joint3_angle,
-            exercise.joint4_name: exercise.joint4_angle,
-            exercise.joint5_name: exercise.joint5_angle
-        }
+        new_data = {}
+
+        if exercise.joint1_angle != 0:
+            new_data[exercise.joint1_name] = exercise.joint1_angle
+        if exercise.joint2_angle != 0:
+            new_data[exercise.joint2_name] = exercise.joint2_angle
+        if exercise.joint3_angle != 0:
+            new_data[exercise.joint3_name] = exercise.joint3_angle
+        if exercise.joint4_angle != 0:
+            new_data[exercise.joint4_name] = exercise.joint4_angle
+        if exercise.joint5_angle != 0:
+            new_data[exercise.joint5_name] = exercise.joint5_angle
 
         with open("exercises_db.json") as file:
             data = js.load(file)
 
+        # if exercise.exercise_name in data: 
         data[exercise.exercise_name] = new_data
 
         with open("exercises_db.json", 'w') as file:
             js.dump(data, file)
+
+        win.destroy()
 
     end = tk.Button(win, bg="black", fg="white", text="Finish", command=end)
     end.grid(row=12, column=0)
