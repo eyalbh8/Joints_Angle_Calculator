@@ -133,10 +133,10 @@ sets_label.grid(row=20, column=4)
 sets_entry = tk.Entry(window, textvariable=sets, font=('calibre', 10, 'normal'))
 sets_entry.grid(row=20, column=6)
 
-start_visualization = tk.Button(window, text='start', command=start)
+start_visualization = tk.Button(window, text='Start', command=start)
 start_visualization.grid(row=22, column=6)
 
-add_new_exercise_button = tk.Button(window, text='add new exercise', command=add_new_exercise)
+add_new_exercise_button = tk.Button(window, text='Add new exercise', command=add_new_exercise)
 add_new_exercise_button.grid(row=24, column=6)
 
 window.mainloop()

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="391ead41-ad24-4d05-a971-a01713c4bd89" name="Default Changelist" comment="" />
+    <list default="true" id="085f5bbc-aea7-4b6d-8b98-bc3ae117b69a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/add_new_exercise_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/add_new_exercise_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="25besPuLu1aHeQm91PJ4yfsCI85" />
+  <component name="ProjectId" id="269ttuCKQETWivOdMwuQOqWjjPe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,11 +28,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="391ead41-ad24-4d05-a971-a01713c4bd89" name="Default Changelist" comment="" />
-      <created>1645800427275</created>
+      <changelist id="085f5bbc-aea7-4b6d-8b98-bc3ae117b69a" name="Default Changelist" comment="" />
+      <created>1646847848322</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1645800427275</updated>
+      <updated>1646847848322</updated>
     </task>
     <servers />
   </component>
