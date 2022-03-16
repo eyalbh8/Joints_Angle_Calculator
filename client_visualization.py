@@ -29,7 +29,7 @@ def calculate_angle(first, mid, end):
 
 
 def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_joint=False,
-               fifth_joints=False, first_angle=0, second_angle=0, third_angle=0,
+               fifth_joint=False, first_angle=0, second_angle=0, third_angle=0,
                fourth_angle=0, fifth_angle=0, number_of_times=0):
     first_joint_first_position = 0
     second_joint_first_position = 0
@@ -193,9 +193,15 @@ def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_
                     else:
                         pass
 
-                    cv2.putText(image, str(first_measured_angle),
-                                tuple(np.multiply(joint_angles[first_joint][1], [640, 480]).astype(int)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    if exercise_angles_checking(first_measured_angle, first_angle):
+                        cv2.putText(image, str(first_measured_angle),
+                                    tuple(np.multiply(joint_angles[first_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+                    else:
+                        cv2.putText(image, str(first_measured_angle),
+                                    tuple(np.multiply(joint_angles[first_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+
 
                 except:
                     pass
@@ -210,9 +216,14 @@ def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_
                     else:
                         pass
 
-                    cv2.putText(image, str(second_measured_angle),
-                                tuple(np.multiply(joint_angles[second_joint][1], [640, 480]).astype(int)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    if exercise_angles_checking(second_measured_angle, second_angle):
+                        cv2.putText(image, str(second_measured_angle),
+                                    tuple(np.multiply(joint_angles[second_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+                    else:
+                        cv2.putText(image, str(second_measured_angle),
+                                    tuple(np.multiply(joint_angles[second_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
@@ -227,9 +238,14 @@ def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_
                     else:
                         pass
 
-                    cv2.putText(image, str(third_measured_angle),
-                                tuple(np.multiply(joint_angles[third_joint][1], [640, 480]).astype(int)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    if exercise_angles_checking(third_measured_angle, third_angle):
+                        cv2.putText(image, str(third_measured_angle),
+                                    tuple(np.multiply(joint_angles[third_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+                    else:
+                        cv2.putText(image, str(third_measured_angle),
+                                    tuple(np.multiply(joint_angles[third_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
@@ -244,26 +260,36 @@ def visualizer(first_joint=False, second_joint=False, third_joint=False, fourth_
                     else:
                         pass
 
-                    cv2.putText(image, str(fourth_measured_angle),
-                                tuple(np.multiply(joint_angles[fourth_joint][1], [640, 480]).astype(int)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    if exercise_angles_checking(fourth_measured_angle, fourth_angle):
+                        cv2.putText(image, str(fourth_measured_angle),
+                                    tuple(np.multiply(joint_angles[fourth_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+                    else:
+                        cv2.putText(image, str(fourth_measured_angle),
+                                    tuple(np.multiply(joint_angles[fourth_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
 
                 try:
-                    fifth_measured_angle = calculate_angle(joint_angles[fifth_joints][0],
-                                                           joint_angles[fifth_joints][1],
-                                                           joint_angles[fifth_joints][2])
+                    fifth_measured_angle = calculate_angle(joint_angles[fifth_joint][0],
+                                                           joint_angles[fifth_joint][1],
+                                                           joint_angles[fifth_joint][2])
 
                     if fifth_joint_first_position == 0:
                         fifth_joint_first_position = fifth_measured_angle
                     else:
                         pass
 
-                    cv2.putText(image, str(fifth_measured_angle),
-                                tuple(np.multiply(joint_angles[fifth_joints][1], [640, 480]).astype(int)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+                    if exercise_angles_checking(fifth_measured_angle, fifth_angle):
+                        cv2.putText(image, str(fifth_measured_angle),
+                                    tuple(np.multiply(joint_angles[fifth_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+                    else:
+                        cv2.putText(image, str(fifth_measured_angle),
+                                    tuple(np.multiply(joint_angles[fifth_joint][1], [640, 480]).astype(int)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
                 except:
                     pass
