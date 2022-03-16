@@ -10,7 +10,7 @@
 7) The exercise is finished when the program close itself and a gif window is created
 
 #### Optional
-1) Press the "Add new exercise"
+1) Press the "Add new exercise" button
 2) Define the name of the exrcise
 3) Define the joints and each joint necessary angle
 4) Press "Finish" 
